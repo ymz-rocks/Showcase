@@ -1,0 +1,307 @@
+﻿<style>
+    @font-face
+    {
+        font-family: "iconvault";
+        src: url("fonts/forecast_font/iconvault_forecastfont.eot");
+        src: url("fonts/forecast_font/iconvault_forecastfont.eot?#iefix") format("embedded-opentype"), url("fonts/forecast_font/iconvault_forecastfont.woff") format("woff"), url("fonts/forecast_font/iconvault_forecastfont.ttf") format("truetype"), url("fonts/forecast_font/iconvault_forecastfont.svg#iconvault") format("svg");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face
+    {
+        font-family: 'bonvenocflight';
+        src: url('fonts/bonvenocf_light_macroman/BonvenoCF-Light-webfont.eot');
+        src: url('fonts/bonvenocf_light_macroman/BonvenoCF-Light-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/bonvenocf_light_macroman/BonvenoCF-Light-webfont.woff') format('woff'), url('fonts/bonvenocf_light_macroman/BonvenoCF-Light-webfont.ttf') format('truetype'), url('fonts/bonvenocf_light_macroman/BonvenoCF-Light-webfont.svg#bonvenocflight') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+
+    current-weather
+    {
+        position: relative;
+        display: block;
+        width: 24em;
+        height: 24.5em;
+        font-family: bonvenocflight;
+        color: #7d858a;
+        background: #fcfdfe;
+        border: 2px solid #d9e1e5;
+        font-size: 1em;
+    }
+
+        current-weather.gray
+        {
+            background: #e9f2f7;
+        }
+
+        current-weather.dark
+        {
+            background: #626262;
+            border-color: #484848;
+        }
+
+        current-weather span.deg::after
+        {
+            content: "\00b0";
+        }
+
+        current-weather > div.location
+        {
+            position: absolute;
+            top: 5.7em;
+            left: 0.2em;
+            font-size: 2em;
+            padding: 0.2em 0.3em;
+            color: #bb4dea;
+        }
+
+        current-weather.dark > div.location
+        {
+            color: #ce6cf8;
+        }
+
+        current-weather > div.last_updated
+        {
+            position: absolute;
+            top: 0.3em;
+            left: 0.3em;
+            font-size: 1.1em;
+            color: #a1abb2;
+        }
+
+            current-weather > div.last_updated::after
+            {
+                content: " \21bb";
+                color: #66b2f3;
+                cursor: pointer;
+            }
+
+
+        current-weather > div.details
+        {
+            position: absolute;
+            left: 0.8em;
+            top: 10.5em;
+            width: 100%;
+            font-size: 1.4em;
+            color: #a1abb2;
+            line-height: 1.8;
+        }
+
+            current-weather > div.details > b
+            {
+                color: #98a2a8;
+            }
+
+
+        current-weather > div.icons
+        {
+            position: relative;
+            top: 4em;
+            width: 100%;
+            height: 6em;
+            clear: both;
+        }
+
+        current-weather > div.temp
+        {
+            position: absolute;
+            top: 0.1em;
+            right: 0.1em;
+            font-size: 5.8em;
+            color: #bb4dea;
+            line-height: 0.9;
+        }
+
+        current-weather.dark > div.temp
+        {
+            color: #ce6cf8;
+        }
+
+        current-weather > div.block
+        {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 15em;
+            height: 6em;
+            text-align: center;
+        }
+
+            current-weather > div.block b
+            {
+                color: #66b2f3;
+                cursor: pointer;
+            }
+
+
+        current-weather ul, current-weather li
+        {
+            list-style: none;
+        }
+
+        current-weather ul
+        {
+            position: relative;
+            padding: 0;
+            float: left;
+            margin-right: 6.2em;
+        }
+
+        current-weather [class^="icon-"],
+        current-weather [class*=" icon-"]
+        {
+            font-family: 'iconvault';
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: inherit;
+            -webkit-font-smoothing: antialiased;
+            font-size: 6em;
+        }
+
+    @media only screen and (min-width: 479px) and (max-width: 678px)
+    {
+        current-weather [class^="icon-"],
+        current-weather [class*=" icon-"]
+        {
+            font-family: 'iconvault';
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: inherit;
+            -webkit-font-smoothing: antialiased;
+        }
+    }
+
+    .basecloud:before, .icon-cloud:before
+    {
+        font-family: 'iconvault';
+        font-size: 6em;
+        content: '\f105';
+        position: absolute;
+        color: #737d83;
+    }
+
+    .basethundercloud:before
+    {
+        font-family: 'iconvault';
+        font-size: 6em;
+        content: '\f105';
+        position: absolute;
+        color: #000;
+    }
+
+    .icon-thunder::before
+    {
+        content: "\f114";
+        position: absolute;
+        color: #98a2a8;
+    }
+
+    .icon-sunny::before
+    {
+        content: "";
+    }
+
+    .icon-sunny::after
+    {
+        content: "\f101";
+        color: #98a2a8;
+        position: absolute;
+    }
+
+    .icon-moon::before
+    {
+        content: "";
+    }
+
+    .icon-moon::after
+    {
+        content: "\f10d";
+        color: #98a2a8;
+        position: absolute;
+    }
+
+    .icon-sun::before
+    {
+        content: "";
+    }
+
+    .icon-sun::after
+    {
+        content: "\f113";
+        color: #98a2a8;
+        position: absolute;
+    }
+
+    .icon-night::before
+    {
+        content: "";
+    }
+
+    .icon-night::after
+    {
+        content: "\f100";
+        color: #98a2a8;
+        position: absolute;
+    }
+
+    .icon-drizzle::before
+    {
+        content: "\f10a";
+        color: #82b2e4;
+        position: absolute;
+    }
+
+    .icon-frosty::before
+    {
+        content: "\f102";
+        position: absolute;
+        color: #85d8f7;
+    }
+
+    .icon-cloud::before
+    {
+        content: "";
+    }
+
+    .icon-cloud::after
+    {
+        content: "\f106";
+        color: #98a2a8;
+        position: absolute;
+    }
+
+    .icon-mist:before
+    {
+        content: '\f108';
+        color: #98a2a8;
+        position: absolute;
+    }
+</style>
+<div class="location" ng-show="valid">{{stats.city}}</div>
+<div class="last_updated" ng-click="refresh()" ng-show="valid">updated {{stats.lastUpdated}}<br /></div>
+<div class="icons" ng-show="valid">
+    <ul ng-repeat="id in stats.icon">
+        <li ng-repeat="section in id" ng-class="section"></li>
+    </ul>
+</div>
+<div class="temp" ng-show="valid"><span class="deg">{{stats.temp}}</span></div>
+<div class="details" ng-show="valid">
+    wind: <b><span class="deg">{{stats.wind.deg}}</span> @ {{stats.wind.speed}} meter/sec</b>
+    <br />
+    humidity: <b>{{stats.humidity}}%</b>
+    <br />
+    forecast: <b>{{stats.forecast}}</b>
+</div>
+<div class="block" ng-hide="valid">
+    {{error}}
+    <br />
+    <b ng-show="error.length>0" ng-click="load(true)">Reload</b>
+</div>
+
+

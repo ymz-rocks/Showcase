@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="OpenWeatherDemoApp">
+<head>
+    <title></title>
+    <script src="lib/angular.min.js"></script>
+    <script src="widgets/current-weather/manager.js"></script>
+    <script>
+
+        // First: go to http://openweathermap.org/appid, sign up and replace the `apiKey` variable value with a real api key (for demo purpose only)
+        // Second: do NOT put your api key here if you intend to use this widget in a production enviroment - store the key in your server instead
+
+        var apiKey = 'PUT_YOUR_API_KEY_HERE',
+            app = angular.module('OpenWeatherDemoApp', []);
+
+        new CurrentWeatherWidgetManager(app, apiKey).apply
+        ({
+            here:
+            {
+                gps: true
+            },
+
+            there:
+            {
+                city: 'prague'
+            }
+        });
+
+    </script>
+    <style>
+        div
+        {
+            position:relative;
+            margin:5px;
+        }
+
+        div.small
+        {
+            font-size: 7pt;
+        }
+
+        div.medium
+        {
+            top:-120px;
+            font-size: 9pt;
+        }
+
+        div.large
+        {
+            top:-240px;
+            font-size: 11pt;
+        }
+
+        current-weather
+        {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="small">
+        <current-weather class="dark"></current-weather>
+    </div>
+    <div class="medium">
+        <current-weather class="gray" key="there"></current-weather>
+    </div>
+    <div class="large">
+        <current-weather key="here"></current-weather>
+    </div>
+</body>
+</html>

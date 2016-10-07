@@ -1,0 +1,20 @@
+﻿{
+	"01d":["icon-sun"],
+	"01n":["icon-moon"],
+	"02d":["icon-cloud", ["icon-sunny"]],
+	"02n":["icon-cloud", ["icon-night"]],
+	"03d":["icon-cloud"],
+	"03n":["icon-cloud"],
+	"04d":["basecloud"],
+	"04n":["basecloud"],
+	"09d":["basecloud", ["icon-drizzle"]],
+	"09n":["basecloud", ["icon-drizzle"]],
+	"10d":["basecloud", ["icon-drizzle", "icon-sunny"]],
+	"10n":["basecloud", ["icon-drizzle", "icon-night"]],
+	"11d":["basethundercloud", ["icon-thunder"]],
+	"11n":["basethundercloud", ["icon-thunder"]],
+	"13d":["basecloud", ["icon-frosty", "icon-sunny"]],
+	"13n":["basecloud", ["icon-frosty", "icon-night"]],
+	"50d":["icon-mist"],
+	"50n":["icon-mist"]
+}
