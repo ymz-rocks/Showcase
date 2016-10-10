@@ -98,9 +98,7 @@
             {
                 key: '@'
             },
-
-            replace:true,
-
+            
             controller: function ($scope, $http)
             {
                 var ctx = this;
