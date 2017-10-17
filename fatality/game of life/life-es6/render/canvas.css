@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Black+Ops+One');
+
+body
+{
+    font-family: 'Black Ops One';
+    font-size: 18pt;
+    text-align: center;
+
+    color: #efefef;
+    background: #3E474A;
+}
+
+body *
+{
+    opacity: 0.9;
+}
+
+h1
+{
+    font-weight: normal;
+    font-size: 32pt;
+
+    color: #6C8287;
+}
+
+.pixelated /* credit to http://phrogz.net/tmp/canvas_image_zoom.html */
+{
+    image-rendering: optimizeSpeed;             /* Legal fallback */
+    image-rendering: -moz-crisp-edges;          /* Firefox        */
+    image-rendering: -o-crisp-edges;            /* Opera          */
+    image-rendering: -webkit-optimize-contrast; /* Safari         */
+    image-rendering: optimize-contrast;         /* CSS3 Proposed  */
+    image-rendering: crisp-edges;               /* CSS4 Proposed  */
+    image-rendering: pixelated;                 /* CSS4 Proposed  */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE8+           */
+}
+
+canvas.pixelated
+{
+    position: relative;
+    display: block;
+    margin: 80px auto 40px auto;
+
+    opacity: 1;
+}

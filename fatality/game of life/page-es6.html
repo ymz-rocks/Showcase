@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Error Page</title>
+
+    <link rel="stylesheet" href="life-es6/render/canvas.css" />
+    <script type="module" src="life.error-es6.js"></script>
+
+    <script>
+        /* 
+            Important Note! Please run this project with: 
+            1. Localhost (do not use file:/// protocol)
+            2. Modern web browser (Chrome 60+, Firefox 57+) 
+
+            Enjoy :)
+        */
+
+        // first - wait for complete document load, then - start!
+        window.addEventListener('load', () => 
+        {
+            var canvas = document.querySelector('#life'), // select canvas element with id = life
+                stats = document.querySelector('.stats'), // and stats element
+                
+                onGenerationTick = (generation) =>
+                {
+                    stats.innerHTML = 'Generation: ' + generation;
+                },
+
+                gol = gameOfLife(canvas, onGenerationTick);
+
+                gol.start();
+
+                // you can also call gol.stop() to stop generation ticks 
+            
+        }, false);
+
+    </script>
+
+</head>
+<body>
+    <h1>PAGE NOT FOUND</h1>
+    <canvas id="life"
+            class="pixelated" 
+            width="620" 
+            height="220">404</canvas>
+    <div class="stats"></div>
+</body>
+</html>
